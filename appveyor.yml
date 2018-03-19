@@ -45,7 +45,7 @@ environment:
     secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
 
 artifacts:  
-- path: .\Unions\obj\Release\*.nupkg
+- path: .\Unions.NET\Unions\obj\Release\*.nupkg
   name: NuGet
 
 deploy:  
