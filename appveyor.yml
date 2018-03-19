@@ -42,7 +42,7 @@ test_script:
   - ps: dotnet test
 
 artifacts:  
-- path: .\Qweex.Unions\Qweex.Unions\artifacts\**\*.nupkg
+- path: .\src\Qweex.Unions\artifacts\**\*.nupkg
   name: NuGet
 
 deploy:  
