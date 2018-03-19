@@ -1,4 +1,5 @@
 ﻿using System;
+using Unions.NET;
 
 namespace Unions.Tests.Common
 {

@@ -1,4 +1,5 @@
-﻿using Unions.Tests.Common;
+﻿using Unions.NET;
+using Unions.Tests.Common;
 using Xunit;
 
 namespace Unions.Tests

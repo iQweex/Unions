@@ -1,3 +1,4 @@
+using Unions.NET;
 using Unions.Tests.Common;
 using Xunit;
 
