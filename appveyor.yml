@@ -38,7 +38,7 @@ clone_depth: 1
 
 test_script:
   - ps: dotnet restore ./src/Qweex.Unions/Qweex.Unions.csproj --verbosity m
-  - ps: cd ../../test/Qweex.Unions.Tests
+  - ps: cd ../test/Qweex.Unions.Tests
   - ps: dotnet test
 
 artifacts:  
