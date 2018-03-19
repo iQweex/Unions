@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unions.NET
+namespace Qweex.Unions
 {
     public sealed class Union<T0, T1> : TUnion<T0, T1>
     {

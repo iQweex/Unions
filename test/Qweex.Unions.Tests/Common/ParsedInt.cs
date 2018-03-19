@@ -1,7 +1,6 @@
 ﻿using System;
-using Unions.NET;
 
-namespace Unions.Tests.Common
+namespace Qweex.Unions.Tests.Common
 {
     public class ParsedInt : TUnion<int, Error>
     {

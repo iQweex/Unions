@@ -1,19 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
-    <id>Unions.NET</id>
+    <id>Unions</id>
     <Version>1.0.0</Version>
     <title>.Net Discriminated Unions</title>
     <authors>kogoia</authors>
     <owners>kogoia</owners>
-    <licenseUrl>https://github.com/iQweex/Unions.NET/blob/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/iQweex/Unions.NET</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <Description>This package provides Discriminated Unions for C# with an opportunity inherit from built in type and create custom Union Type.</Description>
-    <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
     <copyright>Copyright 2018</copyright>
     <tags>Discriminated Unions Pattern Matching</tags>
   </PropertyGroup>
