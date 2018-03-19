@@ -1,5 +1,8 @@
 # Unions.NET
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ki0q2h4ekc8wfttv?svg=true)](https://ci.appveyor.com/project/kogoia/unions-net)
+[![NuGet](https://img.shields.io/nuget/dt/Unions.NET.svg)](https://www.nuget.org/packages/Unions.NET)
+
 Create custom union type
 
 ```cs
