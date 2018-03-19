@@ -32,7 +32,7 @@ before_build:
 
 build_script:
   - ps: dotnet publish ./src/Qweex.Unions/Qweex.Unions.csproj
-  - ps: dotnet pack ./src/Qweex.Unions/Qweex.Unions.csproj -c Release -o .\artifacts --version-suffix=$env:APPVEYOR_BUILD_VERSION 
+  - ps: dotnet pack ./src/Qweex.Unions/Qweex.Unions.csproj -c Release -o .\artifacts
 
 clone_depth: 1
 
