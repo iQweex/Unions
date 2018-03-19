@@ -3,5 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Description>This package provides Discriminated Unions for C# with an opportunity inherit from built in type and create custom Union Type.</Description>
+  </PropertyGroup>
 </Project>
