@@ -44,11 +44,15 @@ test_script:
   - cmd: cd Unions.Tests
   - cmd: dotnet test
 
+environment:
+  nuget_key:
+    secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
+
 deploy:  
 - provider: NuGet
   name: production
-  api_key:
-    secure: xxxxxxxxxxxx
+  api_key: nuget_key
+    secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
   on:
     branch: master
     appveyor_repo_tag: true
