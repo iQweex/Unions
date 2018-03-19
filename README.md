@@ -18,7 +18,9 @@ public class ParsedInt : TUnion<int, Error>
                 new ParsedInt(new Error("Invalid Input"));
         }) {}
         
-    // you can generate all ctors with VS, because TUnion<,> is abstract class, not interface, and it has own ctors
+    // you can generate all ctors with VS, 
+    // because TUnion<,> is an abstract class, not interface, and it has own ctors
+    // which require overloads
     public ParsedInt(Func<TUnion<int, Error>> factory) : base(factory) {}
     public ParsedInt(int value) : base(value) {}
     public ParsedInt(Error value) : base(value) {}
