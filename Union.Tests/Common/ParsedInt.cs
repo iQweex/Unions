@@ -3,7 +3,7 @@ using Unions;
 
 namespace Union.Tests
 {
-    public class ParsedInt : Union<int, Error>
+    public class ParsedInt : TUnion<int, Error>
     {
         public ParsedInt(string str) 
             : this(() =>
