@@ -38,7 +38,7 @@ test_script:
   - cmd: dotnet test
 
 artifacts:  
-- path: .\artifacts\**\*.nupkg
+- path: .\Unions\artifacts\**\*.nupkg
   name: NuGet
 
 deploy:  
