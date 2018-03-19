@@ -32,7 +32,7 @@ before_build:
 
 build_script:
   - ps: dotnet publish ./Unions.NET/Unions.NET.csproj
-  - ps: dotnet pack ./Unions.NET/Unions.NET.csproj -c Release -o .\artifacts --version-suffix=$version
+  - ps: dotnet pack ./Unions.NET/Unions.NET.csproj -c Release -o .\artifacts --version-suffix=$env:version
 
 clone_depth: 1
 
