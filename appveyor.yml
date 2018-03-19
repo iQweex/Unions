@@ -38,11 +38,11 @@ before_build:
   # Display .NET Core version
   - ps: dotnet --version
   # Display minimal restore text
-  - ps: dotnet restore ./Unions/Unions.csproj --verbosity m
+  - ps: dotnet restore ./Unions.NET/Unions.NET.csproj --verbosity m
 
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
-  - ps: dotnet publish ./Unions/Unions.csproj
+  - ps: dotnet publish ./Unions.NET/Unions.NET.csproj
 
 clone_depth: 1  
 
