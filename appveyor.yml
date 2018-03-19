@@ -26,6 +26,7 @@ before_build:
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - cmd: dotnet publish ./Unions/Unions.csproj
+  - ps: dotnet pack ./Unions/Unions.csproj -c Release -o .\artifacts --version-suffix=$revision
 
 clone_depth: 1  
 
@@ -37,7 +38,7 @@ test_script:
   - cmd: dotnet test
 
 artifacts:  
-- path: .\Unions.NET\Unions\obj\Release\*.nupkg
+- path: .\artifacts\**\*.nupkg
   name: NuGet
 
 deploy:  
