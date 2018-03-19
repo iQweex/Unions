@@ -1,0 +1,29 @@
+version: '1.0.{build}'
+configuration: Release
+clone_folder: c:\projects\Union.NET
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
+ build:
+  project: .\Union.NET.sln
+  publish_nuget: true
+  verbosity: minimal
+
+deploy:
+- provider: NuGet
+  api_key:
+    secure: wDCNNKlK1++DShgVeMDQEyVtIu4GqTCTiMHgLXCRf9u7PWZCo3N531zyLMLxKo8n
+  skip_symbols: true
+
+notifications:
+- provider: GitHubPullRequest
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
