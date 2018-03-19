@@ -19,14 +19,14 @@ dotnet_csproj:
 
 before_build:
   # Display .NET Core version
-  - cmd: dotnet --version
+  - ps: dotnet --version
   # Display minimal restore text
-  - cmd: dotnet restore ./Unions/Unions.csproj --verbosity m
+  - ps: dotnet restore ./Unions/Unions.csproj --verbosity m
 
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
-  - cmd: dotnet publish ./Unions/Unions.csproj
-  - ps: dotnet pack ./Unions/Unions.csproj -c Release -o .\artifacts --version-suffix=$revision
+  - ps: dotnet publish ./Unions/Unions.csproj
+  - ps: dotnet pack ./Unions/Unions.csproj -c Release -o .\artifacts
 
 clone_depth: 1  
 
