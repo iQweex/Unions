@@ -1,12 +1,9 @@
 version: '1.0.{build}'
 image: Visual Studio 2017
 
-
 branches:
   only:
   - master
-
-clone_depth: 1  
 
 nuget:  
   disable_publish_on_pr: true
@@ -34,10 +31,19 @@ build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - cmd: dotnet publish ./Unions/Unions.csproj
 
-
 artifacts:  
 - path: .\artifacts\**\*.nupkg
   name: NuGet
+
+clone_depth: 1  
+
+test_script:
+  # restore packages for our unit tests
+  - cmd: dotnet restore ./Unions/Unions.csproj --verbosity m
+  # run the unit tests (requires changing into the test directory)
+  - cmd: cd tests
+  - cmd: dotnet xunit
+
 deploy:  
 - provider: NuGet
   name: production

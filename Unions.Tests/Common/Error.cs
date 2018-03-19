@@ -1,4 +1,4 @@
-namespace Union.Tests
+namespace Unions.Tests.Common
 {
     public class Error
     {

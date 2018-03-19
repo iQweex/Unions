@@ -1,7 +1,6 @@
 ﻿using System;
-using Unions;
 
-namespace Union.Tests
+namespace Unions.Tests.Common
 {
     public class ParsedInt : TUnion<int, Error>
     {
