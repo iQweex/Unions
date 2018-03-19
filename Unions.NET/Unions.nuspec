@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>kogoia</authors>
     <owners>kogoia</owners>
-    <!--<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>-->
+    <licenseUrl>https://github.com/iQweex/Unions.NET/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/iQweex/Unions.NET</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package provides Discriminated Unions for C# with an opportunity inherit from built in type and create custom Union Type.</description>

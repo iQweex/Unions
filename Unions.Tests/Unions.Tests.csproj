@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Unions\Unions.csproj" />
+    <ProjectReference Include="..\Unions.NET\Unions.NET.csproj" />
   </ItemGroup>
 
 </Project>
