@@ -1,6 +1,10 @@
 version: '1.0.{build}'
 image: Visual Studio 2017
 
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
+
 pull_requests:  
   do_not_increment_build_number: true
 
@@ -11,19 +15,7 @@ branches:
 nuget:  
   disable_publish_on_pr: true
 
-init:
-  # Good practise, because Windows line endings are different from Unix/Linux ones
-  - cmd: git config --global core.autocrlf true
-
-test: off
-
-# build Configuration, i.e. Debug, Release, etc.
 configuration: Release
-
-build:
-  publish_nuget: true               # package projects with .nuspec files and push to artifacts
-  publish_nuget_symbols: false      # generate and publish NuGet symbol packages
-  verbosity: minimal                # MSBuild verbosity level
 
 dotnet_csproj:
   patch: true
@@ -35,23 +27,23 @@ dotnet_csproj:
   informational_version: '{version}'
 
 before_build:
-  # Display .NET Core version
   - ps: dotnet --version
-  # Display minimal restore text
   - ps: dotnet restore ./Unions.NET/Unions.NET.csproj --verbosity m
 
 build_script:
-  # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - ps: dotnet publish ./Unions.NET/Unions.NET.csproj
+  - ps: dotnet pack ./Unions.NET/Unions.NET.csproj -c Release -o .\artifacts
 
-clone_depth: 1  
+clone_depth: 1
 
 test_script:
-  # restore packages for our unit tests
-  - cmd: dotnet restore ./Unions.Tests/Unions.Tests.csproj --verbosity m
-  # run the unit tests (requires changing into the test directory)
-  - cmd: cd Unions.Tests
-  - cmd: dotnet test
+  - ps: dotnet restore ./Unions.Tests/Unions.Tests.csproj --verbosity m
+  - ps: cd Unions.Tests
+  - ps: dotnet test
+
+artifacts:  
+- path: .\Unions.NET\artifacts\**\*.nupkg
+  name: NuGet
 
 deploy:  
 - provider: NuGet
