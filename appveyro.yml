@@ -1,6 +1,19 @@
 version: '1.0.{build}'
-configuration: Release
-clone_folder: c:\projects\Union.NET
+image: Visual Studio 2017
+
+
+branches:
+  only:
+  - master
+
+clone_depth: 1  
+
+nuget:  
+  disable_publish_on_pr: true
+
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
 
 dotnet_csproj:
   patch: true
@@ -11,16 +24,28 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 
- build:
-  project: .\Union.NET.sln
-  publish_nuget: true
-  verbosity: minimal
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display minimal restore text
+  - cmd: dotnet restore ./Union.NET/Union.NET.csproj --verbosity m
 
-deploy:
+build_script:
+  # output will be in ./src/bin/debug/netcoreapp1.1/publish
+  - cmd: dotnet publish ./src/src.csproj
+
+
+artifacts:  
+- path: .\artifacts\**\*.nupkg
+  name: NuGet
+deploy:  
 - provider: NuGet
+  name: production
   api_key:
-    secure: wDCNNKlK1++DShgVeMDQEyVtIu4GqTCTiMHgLXCRf9u7PWZCo3N531zyLMLxKo8n
-  skip_symbols: true
+    secure: xxxxxxxxxxxx
+  on:
+    branch: master
+    appveyor_repo_tag: true
 
 notifications:
 - provider: GitHubPullRequest
