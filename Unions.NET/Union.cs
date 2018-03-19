@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unions
+namespace Unions.NET
 {
     public sealed class Union<T0, T1> : TUnion<T0, T1>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unions
+namespace Unions.NET
 {
     public abstract class TUnion<T0, T1>
     {

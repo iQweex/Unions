@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unions
+namespace Unions.NET
 {
     public static class Union
     {
