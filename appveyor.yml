@@ -51,7 +51,7 @@ environment:
 deploy:  
 - provider: NuGet
   name: production
-  api_key: nuget_key
+  api_key: 
     secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
   on:
     branch: master
