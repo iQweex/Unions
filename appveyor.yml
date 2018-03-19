@@ -1,10 +1,6 @@
 version: '1.0.{build}'
 image: Visual Studio 2017
 
-branches:
-  only:
-  - master
-
 nuget:  
   disable_publish_on_pr: true
 
@@ -40,10 +36,6 @@ test_script:
   - cmd: cd Unions.Tests
   - cmd: dotnet test
 
-environment:
-  nuget_key:
-    secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
-
 artifacts:  
 - path: .\Unions.NET\Unions\obj\Release\*.nupkg
   name: NuGet
@@ -54,7 +46,6 @@ deploy:
   api_key: 
     secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
   on:
-    branch: master
     appveyor_repo_tag: true
 
 notifications:
