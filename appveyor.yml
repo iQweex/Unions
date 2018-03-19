@@ -1,12 +1,30 @@
 version: '1.0.{build}'
 image: Visual Studio 2017
 
+pull_requests:  
+  do_not_increment_build_number: true
+
+branches:
+  only:
+  - master
+
 nuget:  
   disable_publish_on_pr: true
 
 init:
   # Good practise, because Windows line endings are different from Unix/Linux ones
   - cmd: git config --global core.autocrlf true
+
+test: off
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+build:
+  publish_nuget: true               # package projects with .nuspec files and push to artifacts
+  publish_nuget_symbols: false      # generate and publish NuGet symbol packages
+  verbosity: minimal                # MSBuild verbosity level
+
 
 dotnet_csproj:
   patch: true
@@ -46,7 +64,11 @@ deploy:
   name: production
   api_key: 
     secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
+  draft: false
+  prerelease: false
+  skip_symbols: false
   on:
+    branch: master
     appveyor_repo_tag: true
 
 notifications:
