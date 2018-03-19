@@ -1,4 +1,4 @@
-namespace Unions.Tests.Common
+namespace Qweex.Unions.Tests.Common
 {
     public class Error
     {

@@ -28,28 +28,28 @@ dotnet_csproj:
 
 before_build:
   - ps: dotnet --version
-  - ps: dotnet restore ./Unions.NET/Unions.NET.csproj --verbosity m
+  - ps: dotnet restore ./src/Qweex.Unions/Qweex.Unions.csproj --verbosity m
 
 build_script:
-  - ps: dotnet publish ./Unions.NET/Unions.NET.csproj
-  - ps: dotnet pack ./Unions.NET/Unions.NET.csproj -c Release -o .\artifacts --version-suffix=$env:APPVEYOR_BUILD_VERSION 
+  - ps: dotnet publish ./src/Qweex.Unions/Qweex.Unions.csproj
+  - ps: dotnet pack ./src/Qweex.Unions/Qweex.Unions.csproj -c Release -o .\artifacts --version-suffix=$env:APPVEYOR_BUILD_VERSION 
 
 clone_depth: 1
 
 test_script:
-  - ps: dotnet restore ./Unions.Tests/Unions.Tests.csproj --verbosity m
-  - ps: cd Unions.Tests
+  - ps: dotnet restore ./src/Qweex.Unions/Qweex.Unions.csproj --verbosity m
+  - ps: cd ../../test/Qweex.Unions.Tests
   - ps: dotnet test
 
 artifacts:  
-- path: .\Unions.NET\artifacts\**\*.nupkg
+- path: .\Qweex.Unions\Qweex.Unions.csproj\artifacts\**\*.nupkg
   name: NuGet
 
 deploy:  
 - provider: NuGet
   name: production
   api_key: 
-    secure: PsR1Z3gDh8uk+Lu1jfqAVBbPMz/2hqbNt447to7V+LDFJeOQil3b8JoblTIzLXj3
+    secure: PtosLCENbDo/W04+/avrKMX7bcnKiWA8okcvWPPpzg+GoOBSI+96Q+4RobcuAsFU
   skip_symbols: false
   on:
     branch: master

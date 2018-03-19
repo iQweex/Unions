@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Unions.NET\Unions.NET.csproj" />
+    <ProjectReference Include="..\..\src\Qweex.Unions\Qweex.Unions.csproj" />
   </ItemGroup>
 
 </Project>

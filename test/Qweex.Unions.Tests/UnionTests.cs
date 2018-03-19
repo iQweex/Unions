@@ -1,14 +1,32 @@
-﻿using Unions.NET;
-using Unions.Tests.Common;
+using Qweex.Unions.Tests.Common;
 using Xunit;
 
-namespace Unions.Tests
+namespace Qweex.Unions.Tests
 {
-    public class CustomUnionTypeTests
+    public class UnionTests
     {
         [Fact]
         public void Test_case_1_2()
         {
+            Assert
+                .Equal(
+                    "1",
+                    new Union<int, string>(1)
+                        .Match(
+                            i => i.ToString(),
+                            s => s
+                        )
+                );
+            Assert
+                .Equal(
+                    "2",
+                    new Union<int, string>("2")
+                        .Match(
+                            i => i.ToString(),
+                            s => s
+                        )
+                );
+
             Assert
                 .Equal(
                     "27",

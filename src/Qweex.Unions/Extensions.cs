@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unions.NET
+namespace Qweex.Unions
 {
     public static class Union
     {
