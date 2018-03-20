@@ -1,4 +1,6 @@
 ﻿using System;
+using Qweex.Unions.Kind2;
+using Qweex.Unions.Kind3;
 
 namespace Qweex.Unions
 {
@@ -20,6 +22,19 @@ namespace Qweex.Unions
                 default:
                     throw new Exception("can't match"); 
             }
+        }
+
+        public static TResult Match<TResult, T0, T1, T2>(
+            this TUnion<T0, T1, T2> u,
+            Func<T0, TResult> f0,
+            Func<T1, TResult> f1,
+            Func<T2, TResult> f2
+        )
+        {
+            return u.Match(
+                ab => ab.Match(f0, f1),
+                f2
+            );
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Qweex.Unions
+namespace Qweex.Unions.Kind2
 {
     public abstract class TUnion<T0, T1>
     {

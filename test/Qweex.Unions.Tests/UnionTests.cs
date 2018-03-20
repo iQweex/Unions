@@ -1,3 +1,4 @@
+using Qweex.Unions.Kind2;
 using Qweex.Unions.Tests.Common;
 using Xunit;
 
@@ -44,6 +45,21 @@ namespace Qweex.Unions.Tests
                         .Match(
                             i => i.ToString(),
                             e => e.Message
+                        )
+                );
+        }
+
+        [Fact]
+        public void Test_Union_with_kind_3()
+        {
+            Assert
+                .Equal(
+                    new A().GetType().ToString(), 
+                    new Foo(new A())
+                        .Match(
+                            a => a.GetType().ToString(),
+                            b => b.GetType().ToString(),
+                            c => c.GetType().ToString()
                         )
                 );
         }

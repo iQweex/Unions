@@ -1,4 +1,5 @@
 ﻿using System;
+using Qweex.Unions.Kind2;
 
 namespace Qweex.Unions.Tests.Common
 {

@@ -1,7 +1,7 @@
-# Unions.NET
+# Qweex.Unions
 
-[![Build status](https://ci.appveyor.com/api/projects/status/ki0q2h4ekc8wfttv?svg=true)](https://ci.appveyor.com/project/kogoia/unions-net)
-[![NuGet](https://img.shields.io/nuget/dt/Unions.NET.svg)](https://www.nuget.org/packages/Unions.NET)
+[![Build status](https://ci.appveyor.com/api/projects/status/juau9eckp6yqfc3l?svg=true)](https://ci.appveyor.com/project/kogoia/unions)
+[![NuGet](https://img.shields.io/nuget/dt/Qweex.Unions.svg)](https://www.nuget.org/packages/Qweex.Unions)
 
 Create custom union type
 
