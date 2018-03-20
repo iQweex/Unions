@@ -1,6 +1,7 @@
 using System;
+using Qweex.Unions.Kind3;
 
-namespace Qweex.Unions.Tests
+namespace Qweex.Unions.Tests.Common
 {
     public class Foo : TUnion<A, B, C>
     {
@@ -16,7 +17,7 @@ namespace Qweex.Unions.Tests
         {
         }
 
-        public Foo(Func<TUnion<TUnion<A, B>, C>> factory) : base(factory)
+        public Foo(Func<TUnion<A, B, C>> factory) : base(factory)
         {
         }
     }

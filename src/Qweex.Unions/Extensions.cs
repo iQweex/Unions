@@ -1,4 +1,6 @@
 ﻿using System;
+using Qweex.Unions.Kind2;
+using Qweex.Unions.Kind3;
 
 namespace Qweex.Unions
 {

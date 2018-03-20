@@ -1,3 +1,4 @@
+using Qweex.Unions.Kind2;
 using Qweex.Unions.Tests.Common;
 using Xunit;
 
