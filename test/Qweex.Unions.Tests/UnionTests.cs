@@ -47,5 +47,20 @@ namespace Qweex.Unions.Tests
                         )
                 );
         }
+
+        [Fact]
+        public void Test_Union_with_kind_3()
+        {
+            Assert
+                .Equal(
+                    new A().GetType().ToString(), 
+                    new Foo(new A())
+                        .Match(
+                            a => a.GetType().ToString(),
+                            b => b.GetType().ToString(),
+                            c => c.GetType().ToString()
+                        )
+                );
+        }
     }
 }
